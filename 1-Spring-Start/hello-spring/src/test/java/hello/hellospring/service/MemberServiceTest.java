@@ -53,11 +53,10 @@ class MemberServiceTest {
         IllegalStateException e = assertThrows(IllegalStateException.class,
                 () -> memberService.join(member2));
         // memberService.join(member2) 이 로직을 실행하고 나면 IllegalStateException 이 예외가 떠야해
-        assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
-
-
 
         //then
+        assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
+
     }
 
     @Test
