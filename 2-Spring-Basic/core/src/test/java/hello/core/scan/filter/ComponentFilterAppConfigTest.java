@@ -10,7 +10,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
-import org.springframework.stereotype.Component;
 
 public class ComponentFilterAppConfigTest {
 
@@ -22,7 +21,7 @@ public class ComponentFilterAppConfigTest {
         assertThat(beanA).isNotNull();
 
         Assertions.assertThrows(NoSuchBeanDefinitionException.class,
-                ()-> ac.getBean("beanB", BeanB.class))
+                ()-> ac.getBean("beanB", BeanB.class));
     }
 
     @Configuration
