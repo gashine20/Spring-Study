@@ -17,7 +17,6 @@ public class MemberApp {
         // AppConfig에서 "memberService" 메소드를 가지고 와서 MemberService 타입으로 리턴
         MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
 
-
         Member member = new Member(1L, "memberA", Grade.VIP);
         memberService.join(member);
 

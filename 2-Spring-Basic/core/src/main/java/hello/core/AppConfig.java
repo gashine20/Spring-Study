@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
 
     @Bean
-    public MemberService memberService(){
+    public MemberService memberService() {
         return new MemberServiceImpl(memberRepository());
     }
 
@@ -27,12 +27,12 @@ public class AppConfig {
     }
 
     @Bean
-    public OrderService orderService(){
+    public OrderService orderService() {
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
     @Bean
-    public DiscountPolicy discountPolicy(){ // 역할
+    public DiscountPolicy discountPolicy() { // 역할
 //        return new FixDiscountPolicy();
         return new RateDiscountPolicy();
     }

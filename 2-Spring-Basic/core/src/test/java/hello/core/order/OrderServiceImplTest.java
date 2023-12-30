@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 class OrderServiceImplTest {
 
     @Test
-    void createOrder(){
+    void createOrder() {
         MemoryMemberRepository memoryMemberRepository = new MemoryMemberRepository();
         memoryMemberRepository.save(new Member(1L, "name", Grade.VIP));
 
