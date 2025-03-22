@@ -17,8 +17,8 @@
         <td th:text="${user.username}">username</td>
         <td>
             <span th:text="${user.age}">0</span>
-            <span th:text="'미성년자'" th:if="${user.age lt 20}"></span> <span th:text="'미성년자'"
-                                                                           th:unless="${user.age ge 20}"></span>
+            <span th:text="'미성년자'" th:if="${user.age lt 20}"></span>
+            <span th:text="'미성년자'" th:unless="${user.age gt 20}"></span>
         </td>
     </tr>
 </table>
@@ -29,11 +29,13 @@
         <th>username</th>
         <th>age</th>
     </tr>
-    <tr th:each="user, userStat : ${users}">
+    <tr th:each="user, userStat: ${users}">
         <td th:text="${userStat.count}">1</td>
         <td th:text="${user.username}">username</td>
         <td th:switch="${user.age}">
-            <span th:case="10">10살</span> <span th:case="20">20살</span> <span th:case="*">기타</span>
+            <span th:case="10">10살</span>
+            <span th:case="20">20살</span>
+            <span th:case="*">기타</span>
         </td>
     </tr>
 </table>
